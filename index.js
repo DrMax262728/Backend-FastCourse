@@ -1,7 +1,9 @@
-const chalk = require('chalk');
-const myText = require('./data');
+const http = require('http');
 
-console.log('myText: ', myText);
-console.log(chalk.red('Hello Node.js!'));
+const server = http.createServer((request, response) => {
+  response.end('<h1>Hello Node.js!!!</h1>');
+});
 
-console.log('dirName: ', __filename);
+server.listen(3131, () => {
+  console.log('Server has been started...');
+});
